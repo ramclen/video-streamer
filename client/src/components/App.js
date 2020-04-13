@@ -5,10 +5,11 @@ import StreamList from "./streams/StreamList";
 import StreamEdit from "./streams/StreamEdit";
 import StreamDelete from "./streams/StreamDelete";
 import StreamCreate from "./streams/StreamCreate";
+import GoogleAuth from "./GoogleAuth";
 
 const App = () => (
   <div>
-    Header
+    <GoogleAuth />
     <BrowserRouter>
       <Route path="/" exact component={StreamList} />
       <Route path="/stream/Show" component={StreamShow} />
