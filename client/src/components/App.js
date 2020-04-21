@@ -6,7 +6,6 @@ import StreamEdit from "./streams/StreamEdit";
 import StreamDelete from "./streams/StreamDelete";
 import StreamCreate from "./streams/StreamCreate";
 import Header from "./Header";
-import { Provider } from "react-redux";
 
 const App = () => (
   <div className="ui container">
