@@ -11,20 +11,9 @@
       "id": 3
     },
     {
-      "title": "Edited Title",
-      "description": "And description",
-      "id": 4
-    },
-    {
-      "title": "This is a new stream",
-      "description": "My stream",
-      "userId": "118330992309867219064",
-      "id": 7
-    },
-    {
-      "title": "Stream created",
-      "description": "With description",
-      "userId": "117164079281979153471",
+      "title": "Title",
+      "description": "This is a good stream",
+      "userId": "117528658505516363408",
       "id": 8
     }
   ]
