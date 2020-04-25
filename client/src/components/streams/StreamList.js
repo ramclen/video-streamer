@@ -12,8 +12,8 @@ class StreamList extends React.Component {
     if (stream.userId === this.props.currentUserId) {
       return (
         <div className="right floated content">
-          <Link className="ui button primary" to={`/streams/edit/${stream.id}`}>Edit</Link>
-          <Link className="ui button negative" to={`/streams/delete/${stream.id}`}>Delete</Link>
+          <Link className="ui button primary" to={`/stream/edit/${stream.id}`}>Edit</Link>
+          <Link className="ui button negative" to={`/stream/delete/${stream.id}`}>Delete</Link>
         </div>
       )
     }
@@ -34,21 +34,38 @@ class StreamList extends React.Component {
     })
   }
 
+  renderCreateButton = () => {
+    if (this.props.isSignedIn) {
+      return (
+        <div style={{ textAlign: 'right' }}>
+          <Link className="ui button primary" to={`/stream/create`}>Create Stream</Link>
+        </div>
+      );
+    }
+  }
+
   render() {
     if (!this.props.streams) {
       return null
     }
     return (
-      <div className="ui celled list">
-        {this.renderList(this.props.streams)}
-      </div >
+      <div>
+        <h2>Streams</h2>
+        <div className="ui celled list">
+          {this.renderList(this.props.streams)}
+        </div >
+        {this.renderCreateButton()}
+      </div>
     )
   }
 
 }
 
 const mapStateToProps = state => {
-  return { streams: Object.values(state.streams), currentUserId: state.auth.currentUserId }
+  return {
+    isSignedIn: state.auth.isSignedIn,
+    streams: Object.values(state.streams), currentUserId: state.auth.currentUserId
+  }
 }
 
 export default connect(mapStateToProps, { getStreams })(StreamList);

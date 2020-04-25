@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import reducers from "./reducers"
 import thunk from 'redux-thunk';
+import Modal from "./components/Modal"
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -14,3 +15,8 @@ const store = createStore(
 )
 
 ReactDom.render(<Provider store={store}> <App /> </Provider>, document.getElementById("root"));
+
+
+
+ReactDom.createPortal(<Modal />, document.getElementById("modal"));
+

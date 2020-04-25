@@ -1,9 +1,9 @@
 import React from "react";
-import { connect } from "react-redux";
 import { Formik, Field, Form } from "formik";
-import { createStream } from "../../actions"
 
 export default class StreamForm extends React.Component {
+  defaultValues = { title: '', description: '' };
+
   renderError = ({ error, touched }) => {
     if (error && touched) {
       return (<div className="ui red message">
@@ -40,8 +40,9 @@ export default class StreamForm extends React.Component {
   }
 
   render() {
+    const initialValues = this.props.initialValues ? this.props.initialValues : this.defaultValues;
     return (
-      <Formik initialValues={{ title: '', description: '' }}
+      <Formik initialValues={initialValues}
         validate={this.validate}
         onSubmit={this.handleOnSubmit}>
         <Form className="ui form" >
@@ -54,7 +55,7 @@ export default class StreamForm extends React.Component {
             {this.renderInput}
           </Field>
 
-          <button className="ui button primary" type="submit">Submit</button>
+          <button className={`ui button primary ${this.props.isLoading ? 'loading' : ''}`} type="submit">Submit</button>
         </Form>
       </Formik>
     )
