@@ -50,16 +50,3 @@ To receive videos from OBS in the application, you have to click on `settings` b
 Then, click on `apply` and on `ok`. Back in the PANTALLA PRINCIPAL you have to click on `Start Streaming` and that's all. The application will show the streaming.
 
 ![Viewing Stream](./img/streamshowing.png)
-
-
-## Built Using
-
-* [Visual Studio Code](https://code.visualstudio.com/)
-* [Google Auth](https://developers.google.com/identity/protocols/oauth2)
-* [OBS Studio](https://obsproject.com/)
-* [Pixabay API](https://pixabay.com/es/service/about/api/)
-
-## Authors
-
-* **Itziar Urbieta** (https://github.com/ThisIsItz)
-
